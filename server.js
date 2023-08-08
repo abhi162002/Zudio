@@ -7,7 +7,11 @@ import cors from 'cors';
 import categoryRoutes from './routes/categoryRoutes.js';
 import ProductRoute from './routes/ProductRoute.js';
 import path from 'path';
-import {fileURLToPath} from 'url';
+// import path from 'node:path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 //configure env
@@ -16,9 +20,9 @@ dotenv.config();
 //database config
 connectDB();
 
-//esModule fix
-const __fileName = fileURLToPath(import.meta.url);
-const __dirName = path.dirName(__fileName);
+// //esModule fix
+// const __fileName = fileURLToPath(import.meta.url);
+// const __dirName = path.dirName(__fileName);
 
 //rest object
 const app = express();
